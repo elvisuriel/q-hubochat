@@ -80,7 +80,9 @@
   max-width: 640px;
   height: 15rem;
   overflow-y: scroll;
-  background: linear-gradient(90deg, #320fe1, #30d8d2);
+  background: #4A90E2;
+  background: -webkit-linear-gradient(to right, #56CCF2, #4A90E2);
+  background: linear-gradient(to right, #56CCF2, #4A90E2);
   margin-bottom: 1rem;
   border-radius: 16px;
   padding: 1rem;
