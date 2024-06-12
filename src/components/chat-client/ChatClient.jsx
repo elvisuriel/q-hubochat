@@ -3,8 +3,8 @@ import './chatClient.css';
 import io from 'socket.io-client';
 import Picker from 'emoji-picker-react';
 
-const socket = io('http://localhost:4000');
-//const socket = io('https://q-hubochat-server.onrender.com');
+//const socket = io('http://localhost:4000');
+const socket = io('https://q-hubochat-server.onrender.com');
 
 export const ChatClient = () => {
   const [message, setMessage] = useState('');
