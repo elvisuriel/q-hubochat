@@ -67,8 +67,8 @@ export const ChatClient = () => {
         ))}
       </div>
       <form onSubmit={handleSubmit} className="form">
-        <span className="title">Q´huboChat</span>
-        <p className="description">Escribe tu mensaje</p>
+        <span className="title">Escribe tu mensaje</span>
+
         <div className='div-type-chat'>
           <img
             className="emoji-icon"
