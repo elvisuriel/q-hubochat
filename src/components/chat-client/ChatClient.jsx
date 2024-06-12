@@ -4,8 +4,8 @@ import io from 'socket.io-client';
 // 1. importo Picker
 import Picker from 'emoji-picker-react'
 
-const socket = io('http://localhost:4000');
-//const socket = io('https://chat-server-edwin-dev.onrender.com/');
+//const socket = io('http://localhost:4000');
+const socket = io('https://q-hubochat-server.onrender.com');
 
 export const ChatClient = () => {
 
@@ -68,7 +68,6 @@ export const ChatClient = () => {
       </div>
       <form onSubmit={handleSubmit} className="form">
         <span className="title">Escribe tu mensaje</span>
-
         <div className='div-type-chat'>
           <img
             className="emoji-icon"
