@@ -105,10 +105,31 @@
   background-color: #4A90E2;
 }
 
+.div-online-users {
+  background: #f0f0f0;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.div-online-users h3 {
+  margin-top: 0;
+}
+
+.div-online-users ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.div-online-users li {
+  margin: 0.5rem 0;
+  color: #333;
+}
+
 .txt-username {
   margin-bottom: 1rem;
   font-size: 1.2rem;
-  color: #ff4500;
+  color: #0026ff;
 }
 
 .emoji-icon {
