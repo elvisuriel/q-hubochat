@@ -127,7 +127,7 @@
 }
 
 .username-container {
-  background-image: url(https://res.cloudinary.com/dybws2ubw/image/upload/v1718294661/chatbots_mohwke.jpg);
+  position: relative;
   background-size: cover;
   background-position: center;
   padding: 10rem;
@@ -137,6 +137,22 @@
   align-items: center;
   margin-bottom: 1rem;
   color: white;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.username-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url(https://res.cloudinary.com/dybws2ubw/image/upload/v1718294661/chatbots_mohwke.jpg);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
 }
 
 .username-container input {
