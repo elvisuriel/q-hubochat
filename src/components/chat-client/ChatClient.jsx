@@ -10,12 +10,23 @@ export const ChatClient = () => {
   const [message, setMessage] = useState('');
   const [username, setUserName] = useState('');
   const [confirmedUsername, setConfirmedUsername] = useState('');
+  const [avatar, setAvatar] = useState('');
   const [showPicker, setShowPicker] = useState(false);
   const [listMessages, setListMessages] = useState([{
     body: "Bienvenido a la sala de chat",
     user: "Admin",
+    avatar: "https://res.cloudinary.com/dybws2ubw/image/upload/v1718295429/avatar-admin_dkbs4f.avif"
   }]);
   const [onlineUsers, setOnlineUsers] = useState([]);
+
+  const avatars = [
+    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294095/Avatar-1_vwj2k1.png',
+    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-3_tahjmi.jpg',
+    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-4_ctvbxa.png',
+    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-5_i2tasd.png',
+    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294443/avatar-6_ugldj0.jpg',
+    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294445/avatar-2_vtankk.png',
+  ];
 
   const onEmojiClick = (emojiObject) => {
     setMessage(prevInput => prevInput + emojiObject.emoji);
@@ -24,19 +35,20 @@ export const ChatClient = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    socket.emit('message', { body: message, user: confirmedUsername });
+    socket.emit('message', { body: message, user: confirmedUsername, avatar });
     const newMsg = {
       body: message,
-      user: confirmedUsername
+      user: confirmedUsername,
+      avatar
     };
     setListMessages([...listMessages, newMsg]);
     setMessage('');
   };
 
   const confirmUsername = () => {
-    if (username.trim()) {
+    if (username.trim() && avatar) {
       setConfirmedUsername(username);
-      socket.emit('userConnected', username);
+      socket.emit('userConnected', { username, avatar });
     }
   };
 
@@ -60,13 +72,24 @@ export const ChatClient = () => {
   return (
     <>
       {!confirmedUsername ? (
-        <div className="username-container" >
+        <div className="username-container">
           <input
             onChange={event => setUserName(event.target.value)}
             className='txt-username'
             type="text"
             placeholder='Escribe su Alias'
           />
+          <div className="avatar-selection">
+            {avatars.map((url, idx) => (
+              <img
+                key={idx}
+                src={url}
+                alt={`Avatar ${idx + 1}`}
+                className={`avatar ${avatar === url ? 'selected' : ''}`}
+                onClick={() => setAvatar(url)}
+              />
+            ))}
+          </div>
           <button onClick={confirmUsername}>Ingresar</button>
         </div>
       ) : (
@@ -75,7 +98,10 @@ export const ChatClient = () => {
             <h3>Usuarios en línea:</h3>
             <ul>
               {onlineUsers.map((user, idx) => (
-                <li key={user + idx}>{user}</li>
+                <li key={user.username + idx}>
+                  <img src={user.avatar} alt="avatar" className="user-avatar" />
+                  {user.username}
+                </li>
               ))}
             </ul>
           </div>
@@ -83,9 +109,10 @@ export const ChatClient = () => {
           <div className="div-chat">
             {listMessages.map((message, idx) => (
               <p
-                key={message + idx}
+                key={message.body + idx}
                 className={message.user === 'Máquina' ? 'user-machine' : 'user-other'}
               >
+                <img src={message.avatar} alt="avatar" className="message-avatar" />
                 {message.user}: {message.body}
               </p>
             ))}

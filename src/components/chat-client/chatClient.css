@@ -127,7 +127,7 @@
 }
 
 .username-container {
-  background-image: url(https://cdn.kometia-static.com/blog/2017/11/06182228/chatbots.jpg);
+  background-image: url(https://res.cloudinary.com/dybws2ubw/image/upload/v1718294661/chatbots_mohwke.jpg);
   background-size: cover;
   background-position: center;
   padding: 10rem;
@@ -174,7 +174,33 @@
   color: yellow !important;
 }
 
+.avatar-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+}
 
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.avatar.selected {
+  transform: scale(1.2);
+  border: 2px solid #4A90E2;
+}
+
+.user-avatar,
+.message-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+}
 
 .picker-container {
   width: 90%;
@@ -191,11 +217,11 @@
 @media (max-width: 768px) {
   .form {
     padding: 1.5rem;
-    width: 90%;
+    width: 70%;
   }
 
   .username-container {
-    padding: 4rem;
+    padding: 1rem;
   }
 
   .title {

@@ -28,7 +28,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 300px;
+  min-width: 400px;
   min-height: 80vh;
 }
 
@@ -94,5 +94,6 @@ button:focus-visible {
 @media (max-width: 768px) {
   body {
     min-height: 20vh;
+
   }
 }
