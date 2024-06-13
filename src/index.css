@@ -28,8 +28,8 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 520px;
-  min-height: 100vh;
+  min-width: 300px;
+  min-height: 80vh;
 }
 
 h1 {
