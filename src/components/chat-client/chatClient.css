@@ -137,7 +137,6 @@
   align-items: center;
   margin-bottom: 1rem;
   color: white;
-  /* Color del texto para que se vea bien sobre el fondo */
 }
 
 .username-container input {
@@ -146,9 +145,7 @@
   border-radius: 8px;
   border: 1px solid #ccc;
   background: rgba(255, 255, 255, 0.8);
-  /* Fondo semi-transparente */
   color: #333;
-  /* Color del texto */
 }
 
 .username-container button {
@@ -167,9 +164,7 @@
 
 .txt-username {
   background: rgba(255, 255, 255, 0.8);
-  /* Fondo semi-transparente */
   color: #333;
-  /* Color del texto */
 }
 
 .emoji-icon {
@@ -189,7 +184,6 @@
 }
 
 .input-style {
-  /* background-color: #003b76; */
   color: red;
   margin-right: 1rem;
 }

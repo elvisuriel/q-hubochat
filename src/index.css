@@ -28,13 +28,31 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 520px;
   min-height: 100vh;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin: 0.5em 0;
+  padding: 0.2em 0;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+}
+
+
+h1:hover {
+  color: #007BFF;
+  background-color: rgba(255, 255, 255, 1);
+  transform: scale(1.05);
 }
 
 button {
