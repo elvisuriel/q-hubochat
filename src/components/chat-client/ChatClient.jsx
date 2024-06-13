@@ -60,14 +60,14 @@ export const ChatClient = () => {
   return (
     <>
       {!confirmedUsername ? (
-        <div className="username-container">
+        <div className="username-container" style={{ backgroundImage: "url(https://cdn.kometia-static.com/blog/2017/11/06182228/chatbots.jpg)", backgroundSize: 'cover', backgroundPosition: 'center', padding: '2rem', borderRadius: '16px' }}>
           <input
             onChange={event => setUserName(event.target.value)}
             className='txt-username'
             type="text"
-            placeholder='Escribe su Nombre'
+            placeholder='Escribe su Alias'
           />
-          <button onClick={confirmUsername}>Confirmar Nombre</button>
+          <button onClick={confirmUsername}>Confirmar Alias</button>
         </div>
       ) : (
         <>
