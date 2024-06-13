@@ -118,19 +118,21 @@ export const ChatClient = () => {
           <form onSubmit={handleSubmit} className="form">
             <span className="title">Escribe tu mensaje</span>
             <div className='div-type-chat'>
-              <img
-                className="emoji-icon"
-                src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
-                onClick={() => setShowPicker(!showPicker)} />
-              {showPicker && <Picker className="prueba" onEmojiClick={onEmojiClick} />}
-              <input
-                value={message}
-                placeholder="Escribe tu mensaje"
-                onChange={e => setMessage(e.target.value)}
-                type="text" name="text" id="chat-message"
-                className="input-style"
-              />
-              <button type="submit">Enviar</button>
+              <div className="input-emoji-container">
+                <img
+                  className="emoji-icon"
+                  src="https://icons.getbootstrap.com/assets/icons/emoji-smile.svg"
+                  onClick={() => setShowPicker(!showPicker)} />
+                {showPicker && <Picker className="prueba" onEmojiClick={onEmojiClick} />}
+                <input
+                  value={message}
+                  placeholder="Escribe tu mensaje"
+                  onChange={e => setMessage(e.target.value)}
+                  type="text" name="text" id="chat-message"
+                  className="input-style"
+                />
+              </div>
+              <button type="submit" className="send-button">Enviar</button>
             </div>
           </form>
         </>
