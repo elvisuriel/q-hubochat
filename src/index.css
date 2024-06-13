@@ -90,3 +90,9 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@media (max-width: 768px) {
+  body {
+    min-height: 20vh;
+  }
+}

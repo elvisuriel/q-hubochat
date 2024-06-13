@@ -67,7 +67,7 @@ export const ChatClient = () => {
             type="text"
             placeholder='Escribe su Alias'
           />
-          <button onClick={confirmUsername}>Confirmar Alias</button>
+          <button onClick={confirmUsername}>Ingresar</button>
         </div>
       ) : (
         <>
