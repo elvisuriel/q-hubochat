@@ -126,10 +126,50 @@
   color: #333;
 }
 
-.txt-username {
+.username-container {
+  background-image: url(https://cdn.kometia-static.com/blog/2017/11/06182228/chatbots.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 10rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 1rem;
-  font-size: 1.2rem;
-  color: #0026ff;
+  color: white;
+  /* Color del texto para que se vea bien sobre el fondo */
+}
+
+.username-container input {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: rgba(255, 255, 255, 0.8);
+  /* Fondo semi-transparente */
+  color: #333;
+  /* Color del texto */
+}
+
+.username-container button {
+  padding: 0.5rem 1rem;
+  background-color: #4A90E2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.username-container button:hover {
+  background-color: #357ABD;
+}
+
+.txt-username {
+  background: rgba(255, 255, 255, 0.8);
+  /* Fondo semi-transparente */
+  color: #333;
+  /* Color del texto */
 }
 
 .emoji-icon {
@@ -158,6 +198,10 @@
   .form {
     padding: 1.5rem;
     width: 90%;
+  }
+
+  .username-container {
+    padding: 4rem;
   }
 
   .title {
