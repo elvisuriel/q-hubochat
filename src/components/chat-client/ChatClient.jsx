@@ -5,7 +5,14 @@ import Picker from 'emoji-picker-react';
 
 //const socket = io('http://localhost:4000');
 const socket = io('https://q-hubochat-server.onrender.com');
-
+const avatars = [
+  'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294095/Avatar-1_vwj2k1.png',
+  'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-3_tahjmi.jpg',
+  'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-4_ctvbxa.png',
+  'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-5_i2tasd.png',
+  'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294443/avatar-6_ugldj0.jpg',
+  'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294445/avatar-2_vtankk.png',
+];
 export const ChatClient = () => {
   const [message, setMessage] = useState('');
   const [username, setUserName] = useState('');
@@ -18,15 +25,6 @@ export const ChatClient = () => {
     avatar: "https://res.cloudinary.com/dybws2ubw/image/upload/v1718295429/avatar-admin_dkbs4f.avif"
   }]);
   const [onlineUsers, setOnlineUsers] = useState([]);
-
-  const avatars = [
-    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294095/Avatar-1_vwj2k1.png',
-    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-3_tahjmi.jpg',
-    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-4_ctvbxa.png',
-    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294444/avatar-5_i2tasd.png',
-    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294443/avatar-6_ugldj0.jpg',
-    'https://res.cloudinary.com/dybws2ubw/image/upload/v1718294445/avatar-2_vtankk.png',
-  ];
 
   const onEmojiClick = (emojiObject) => {
     setMessage(prevInput => prevInput + emojiObject.emoji);
@@ -46,7 +44,7 @@ export const ChatClient = () => {
   };
 
   const confirmUsername = () => {
-    if (username.trim() && avatar) {
+    if (username.trim()) {
       setConfirmedUsername(username);
       socket.emit('userConnected', { username, avatar });
     }
@@ -112,7 +110,7 @@ export const ChatClient = () => {
                 key={message.body + idx}
                 className={message.user === 'Máquina' ? 'user-machine' : 'user-other'}
               >
-                <img src={message.avatar} alt="avatar" className="message-avatar" />
+                <img src={message.avatar} alt="Avatar" className="avatar" />
                 {message.user}: {message.body}
               </p>
             ))}
